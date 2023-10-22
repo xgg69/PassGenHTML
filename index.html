@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div id="gridTopBar">
+            <div id="topItem1">PASS GEN</div>
+            <div id="topItem2">BY XGG</div>
+
+            <div id="topItem3">
+                <a href="index.html">MAIN</a>
+            </div>
+            <div id="topItem5">
+                <a href="about.html">ABOUT</a>
+            </div>
+        </div>
+    </div>
+<py-script>
+from js import console
+import random
+import string
+
+def generate(length = int(), lowerc = bool(), upperc = bool(), num = bool(), sym = bool()):
+
+    lowerc = bool(Element('lowercaseCheck').element.checked)
+    upperc = bool(Element('uppercaseCheck').element.checked)
+    num = bool(Element('numberCheck').element.checked)
+    sym = bool(Element('symbolCheck').element.checked)
+
+    length = int(Element('lengthNumber').element.value)
+
+    currentChars = ""
+    password = ""
+
+    if(lowerc):
+        currentChars = currentChars + string.ascii_lowercase
+
+    if(upperc):
+        currentChars = currentChars + string.ascii_uppercase
+
+    if(num):
+        currentChars = currentChars + string.digits
+
+    if(sym):
+        currentChars = currentChars + string.punctuation
+
+    for i in range(length):
+        password = password + currentChars[random.randint(0, len(currentChars)-1)]
+
+    console.log(password)
+
+    Element('passText').element.value = password
+</py-script>
+    <div class="main">
+        <div id="gridBase">
+            <div id="item1">
+                <script>
+                    function updateTextInput(val) {
+                        document.getElementById('lengthNumber').value=val; 
+                    }
+                    function updateRangeInput(val) {
+                        document.getElementById('lengthSlider').value=val; 
+                    }
+                </script>
+                <div id="intGrid">
+                    <div id="intItem1">
+                        <input type="range" id="lengthSlider" min="1" max="50" value="20" onclick="updateTextInput(this.value)">
+                    </div>
+                    <div id="intItem2"> :Length</div>
+                    <div id="intItem3">
+                        <input type="number" id="lengthNumber" value="20" min="1" max="50" onchange="updateRangeInput(this.value)">
+                    </div>
+                    <div id="intItem4">
+                        <button class="generateBtn" id="generateBtn" pys-onClick="generate">GENERATE!</button>
+                    </div>
+                    <div id="intItem6">
+                        <input type="checkbox" id="lowercaseCheck" checked="checked" class="checkmark">
+                        <div class="checkmarkText">
+                            Lowercase
+                        </div>
+                        <input type="checkbox" id="uppercaseCheck" checked="unchecked" class="checkmark">
+                        <div class="checkmarkText">
+                            Uppercase
+                        </div>
+                        <input type="checkbox" id="numberCheck" checked="checked" class="checkmark">
+                        <div class="checkmarkText">
+                            Numbers
+                        </div>
+                        <input type="checkbox" id="symbolCheck" checked="unchecked" class="checkmark">
+                        <div class="checkmarkText">
+                            Symbols
+                        </div>
+                    </div>
+                    <div id="intItem5">Generated Password:
+                        <input type="text" class="passText" id="passText">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

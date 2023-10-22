@@ -1,0 +1,228 @@
+body {margin: 0;}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#gridTopBar {
+    display: grid;
+    background-color: rgb(50, 50, 50);
+    grid-template-columns: 20%;
+    grid-template-rows: 48px;
+}
+#topItem1 {
+    grid-column: 1;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    word-spacing: 8px;
+    letter-spacing: 4px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Consolas';
+    font-weight: lighter;
+}
+#topItem2 {
+    grid-column: 5;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    word-spacing: 8px;
+    letter-spacing: 4px;
+    font-size: 17px;
+    color: white;
+    font-family: 'Consolas';
+    font-weight: lighter;
+}
+
+#topItem3 {
+    grid-column: 2;
+    grid-row: 1;
+}
+#topItem5 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    padding: 15px 44%;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+.navbar a:hover {
+    background-color: beige;
+    color: black;
+}
+.main {
+    padding: 1%;
+    margin-top: 48px;
+    width: 100%;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-image: url('background.png');
+    background-position: center;
+}
+h1 {
+    font-size: 100px;
+    text-align: center;
+    margin: 20% 60px auto 20px;
+    color: white;
+    font-weight: lighter;
+    font-style: italic;
+    background-color: rgb(50, 50, 50);
+}
+#gridBase {
+    display: grid;
+    grid-template-columns: [line0] 20% [line1] 60% [line2] 20% [line3];
+    grid-template-rows: 500px;
+    border: 10px;
+    border-radius: 25px;
+    box-shadow: 10px;
+}
+#item1 {
+    background-color: rgb(50, 50, 50);
+    color: rgb(221, 0, 0);
+    grid-column-start: line1;
+    grid-column-end: line2;
+    border-radius: 10px;
+}
+
+#intGrid {
+    display: grid;
+    grid-template-columns: [line0] 33% [line1] 33% [line2] 33% [line3];
+    grid-template-rows: [line0] 125px [line1] 125px [line2] 125px [line3] 125px [line4];
+}
+#intItem1 {
+    grid-column-start: line0;
+    grid-column-end: line2;
+    grid-row-start: line0;
+    grid-row-end: line1;
+    align-items: center;
+}
+#intItem2 {
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: line0;
+    grid-row-end: line1;
+    text-align: center;
+    font-family: 'Consolas';
+    padding: 25px;
+    font-size: 50px;
+    color: white;
+}
+#intItem3 {
+    grid-column-start: line0;
+    grid-column-end: line1;
+    grid-row-start: line1;
+    grid-row-end: line2;
+}
+#intItem4 {
+    grid-column-start: line1;
+    grid-column-end: line2;
+    grid-row-start: line1;
+    grid-row-end: line2;
+}
+#intItem5 {
+    grid-column-start: line0;
+    grid-column-end: line2;
+    grid-row-start: line2;
+    grid-row-end: line3;
+    font-size: 50px;
+    font-family: 'Consolas';
+    margin-left: 20px;
+    color: white;
+}
+#intItem6 {
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: line1;
+    grid-row-end: line4;
+}
+
+.square {
+    width: 50%;
+    height: 200px;
+    background-color: rgb(30, 47, 98);
+}
+#lengthSlider {
+    background-color: rgb(103, 103, 103);
+    border-radius: 10px;
+    width: 95%;
+    height: 50px;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+#lengthSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 75px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(221, 0, 0);
+}
+#lengthSlider:hover {
+    opacity: 1;
+}
+#lengthNumber {
+    width: 50%;
+    height: 50%;
+    background-color: beige;
+    margin-left: 20px;
+    font-size: 50px;
+    border-radius: 10px;
+    font-family: 'Consolas';
+}
+.generateBtn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: 'Arial';
+    font-size: 30px;
+    border-radius: 50px;
+    border: 0;
+    border-color: white;
+    color: black;
+    background-color: beige;
+    width: 80%;
+    height: 50%;
+}
+.checkmark {
+    padding: 10px;
+    padding-left: 10px;
+    margin-left: 25px;
+    width: 25px;
+    height: 25px;
+    display: inline;
+}
+.checkmarkText {
+    padding: 10px;
+    padding-left: 10%;
+    padding-right: 30%;
+    display: inline-block;
+    font-size: 28px;
+    font-family: 'Consolas';
+    color: white;
+}
+.passText {
+    width: 93%;
+    height: 25px;
+    font-size: 20px;
+    margin-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+}
